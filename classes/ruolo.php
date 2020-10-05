@@ -4,7 +4,7 @@ require_once 'dipendente.php';
 
 class Ruolo extends Dipendente {
 
-  public $ruolo;
+  protected $ruolo;
 
   public function __construct($_ruolo){
     $this->ruolo = $_ruolo;
