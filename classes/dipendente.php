@@ -1,13 +1,13 @@
 <?php
+require_once __DIR__.'/../traits/Contratto.php';
 
 class Dipendente {
+  use Contratto;
   protected $nome;
   protected $cognome;
   protected $cf;
 
-
   public function __construct($_nome ='A', $_cognome = 'B', $_cf ='C'){
-
     $this->nome = $_nome;
     $this->cognome = $_cognome;
     $this->cf = $_cf;
@@ -33,7 +33,5 @@ class Dipendente {
     }
     $this->cf = $_cf;
   }
-
-
 
 }
