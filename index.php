@@ -3,23 +3,30 @@ declare(strict_types=1); // **PROVA** Dichiaro il tipo di dato, se differente bl
 require_once 'classes/dipendente.php';
 require_once 'classes/ruolo.php';
 
+
 $dipendente1 = new Dipendente();
-$dipendente1->setNome('Luca');
-$dipendente1->setCognome('Riccio');
-$dipendente1->setCf('RCCL');
+$dipendente2 = new Dipendente();
+$dirigente = new Ruolo('Dirigente');
+try {
+  $dipendente1->setNome('Luca');
+  $dipendente2->setNome('Franco');
+  $dirigente->setNome('Gianni');
+  $dipendente1->setCognome('Riccio');
+  $dipendente2->setCognome('Rossi');
+  $dirigente->setCognome('Bianchi');
+  $dipendente1->setCf('RCCL');
+  $dipendente2->setCf('RSSF');
+  $dirigente->setCf('BNNA');
+
+} catch (Exception $e){
+  echo $e->getMessage();
+
+}
+
 $dipendente1->setContratto('tempo determinato');
 
-
-$dipendente2 = new Dipendente();
-$dipendente2->setNome('Franco');
-$dipendente2->setCognome('Rossi');
-$dipendente2->setCf('RSSF');
 $dipendente2->setContratto('tempo determinato');
 
-$dirigente = new Ruolo('Dirigente');
-$dirigente->setNome('Gianni');
-$dirigente->setCognome('Bianchi');
-$dirigente->setCf('BNNA');
 $dirigente->setContratto('tempo indeterminato');
 
 
